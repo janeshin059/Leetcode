@@ -86,7 +86,7 @@ class LinkedList {
 
   //Remove at index
   removeAt(index) {
-    if(index > 0 && index > this.size){
+    if(index > 0 && index >= this.size){
       return;
     }
     let current = this.head;
