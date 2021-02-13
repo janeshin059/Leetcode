@@ -57,7 +57,7 @@ class LinkedList {
    current = this.head;
    let count = 0;
 
-   while(count < index) {
+   while(count < index) {//넣고자 하는거 전까지
      previous = current;
      count++;
      current = current.next; // node after index. traverse the linked list
@@ -89,7 +89,7 @@ class LinkedList {
     if(index > 0 && index >= this.size){
       return;
     }
-    let current = this.head;
+    let current = this.head;//start from head
     let previous;
     let count = 0;
 
