@@ -54,7 +54,7 @@ class LinkedList {
    const node = new Node(data);
    let current, previous;
 
-   current = this.head;
+   current = this.head;//initialize
    let count = 0;
 
    while(count < index) {//넣고자 하는거 전까지
@@ -103,10 +103,17 @@ class LinkedList {
         previous = current;
         current = current.next;
       }
-      previous.next = current.next;
+      previous.next = current.next;//delete
     }
 
     this.size--;
+  }
+
+  //  head에 대한 access가 없고, delete 하려는 node 자체에 대한 access만 있을 때.leetcode 237
+  deleteAt(node){
+    node.val = node.next.val;
+    node.next = node.next.next;
+
   }
 
 
