@@ -103,7 +103,7 @@ class LinkedList {
         previous = current;
         current = current.next;
       }
-      previous.next = current.next;//delete
+      previous.next = current.next;//delete!!
     }
 
     this.size--;
