@@ -224,6 +224,23 @@ remove(data){
   
   return output;
   };
+
+  inorderTraversal2 = function(root) {
+    let data= []
+    let stack = []
+    if(root===null) return data
+    let current = root
+    while(current!==null || stack.length){
+    while(current!==null){
+    stack.push(current)
+    current = current.left
+    }
+    current = stack.pop()
+    data.push(current.val)
+    current = current.right
+    }
+    return data
+    };
   
   
 
