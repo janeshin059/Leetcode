@@ -3,7 +3,7 @@ var hasCycle = function(head){
   let slowPointer = head;
 
   //while loop will continue until the fast pointer reaches the end of the linked list
-
+ 
   while (fastPointer !== null && fastPointer.next !== null){
     fastPointer = fastPointer.next.next;
     slowPointer = slowPointer.next;
@@ -16,4 +16,4 @@ var hasCycle = function(head){
 }
 
 // time O(n) : traverse the linked list
-//space O(1) : didn't make an extra memory
+//space O(1) 
