@@ -225,6 +225,7 @@ remove(data){
   return output;
   };
 
+
   inorderTraversal2 = function(root) {
     let data= []
     let stack = []
@@ -242,8 +243,27 @@ remove(data){
     return data
     };
   
-  
+}
+// Time complexity
+//bfs, dfs : O(V+E) vertices + edge
 
 
+// ['unweighted graph' 에서 최단 경로 찾는 bfs]
+//BFS: root node 부터 시작해 가장 가까운 노드를 먼저 탐색
 
+//최단거리 찾을 때 주로 이용(구글맵에서 특정 위치까지의 최단거리를 안내하거나, 페이스북에서 친구 추천하는 등)
+
+//방문하지 않은 노드들이 생성한 큐에 담기기 때문에, 만약 큐에 노드가 있으면 탐색이 끝나지 않은 것.
+//큐의 길이가 0일떄까지 반복문 돌리기
+
+bfs = function(root){
+  let queue = [root];
+  let data = [];
+  while(queue.length){
+    let node = queue.shift();
+    data.push(node.val);
+    if(node.left) queue.push(node.left);
+    if(node.right) queue.push(node.right);
+  }
+  return data;
 }
