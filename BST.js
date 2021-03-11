@@ -180,8 +180,8 @@ remove(data){
      let result = new Array();
      function traversePreOrder(node){
        result.push(node.data);
-       node.left && traversePostOrder(node.left);
-       node.right && traversePostOrder(node.right);
+       node.left && traversePreOrder(node.left);
+       node.right && traversePreOrder(node.right);
      }
      traversePreOrder(this.root);
      return result;
@@ -248,22 +248,45 @@ remove(data){
 //bfs, dfs : O(V+E) vertices + edge
 
 
+
+
+/**
+   *           1
+   *         /   \
+   *        2     3    bfs: 1 2 3 4 5 6
+   *       / \   /     
+   *      4   5 6
+   */
+
 // ['unweighted graph' 에서 최단 경로 찾는 bfs]
-//BFS: root node 부터 시작해 가장 가까운 노드를 먼저 탐색
+//BFS: root node 부터 시작해 가장 가까운 노드를 먼저 탐색(level order)
 
 //최단거리 찾을 때 주로 이용(구글맵에서 특정 위치까지의 최단거리를 안내하거나, 페이스북에서 친구 추천하는 등)
 
 //방문하지 않은 노드들이 생성한 큐에 담기기 때문에, 만약 큐에 노드가 있으면 탐색이 끝나지 않은 것.
+
+//탐색한 노드를 큐애 하나씩 넣기
+// 자식들을 다 방문했으면 부모 노드를 큐에서 빼줌
 //큐의 길이가 0일떄까지 반복문 돌리기
 
+//it allows us to keep a reference to nodes that we want to come back to, even though we haven’t checked/visited them yet.
+
 bfs = function(root){
-  let queue = [root];
-  let data = [];
-  while(queue.length){
-    let node = queue.shift();
-    data.push(node.val);
-    if(node.left) queue.push(node.left);
-    if(node.right) queue.push(node.right);
+  if (root === null) return;
+
+  let queue = [];
+  queue.push(root);
+
+  while(queue.length > 0){
+    let cur = queue[0];
+    if(cur.left) queue.push(cur.left);
+    if(cur.right) queue.push(cur.right);
+    //remove the current node (cur) from the queue
+    queue.shift();
   }
-  return data;
+
 }
+
+//Time: O(n) 전체 노드 탐색
+//Space: O(n) 전체 노드 탐색. 노드를 다 큐에 넣음
+
