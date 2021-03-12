@@ -16,7 +16,7 @@
   let high = n;
  
   while(low<=high){
-       let mid = low+ Math.floor((high-low)/2);
+      let mid = low+ Math.floor((high-low)/2);
       if(guess(mid) == -1){
           high = mid -1;
       }

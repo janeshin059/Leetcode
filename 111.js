@@ -34,7 +34,6 @@ var minDepth2 = function(root) { //BFS
 };
 
 var minDepth3 = function(root) { //BFS
-    let depth = 0;
      let queue = [{node: root, level:1}];
      if(root == null) return 0;
      while(queue.length){
