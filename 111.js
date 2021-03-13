@@ -16,8 +16,9 @@ var minDepth = function(root) {
 var minDepth2 = function(root) { //BFS
     if(root == null) return 0;
     let depth = 0;
-    let queue = [root]
-    while(queue.length){
+    let queue = [];
+    queue.push(root);
+    while(queue.length > 0){
         let numberOfNodes = queue.length;
         for(let i=0; i<numberOfNodes;i++){
             let current = queue.shift();
