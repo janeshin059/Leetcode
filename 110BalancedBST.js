@@ -23,7 +23,7 @@
 };
 //optimization
 
-var isBalanced = function(root) {
+var isBalanced2 = function(root) {
   let balanced = true;
   const callDFS = (node) => {
       if(!node) return true;
