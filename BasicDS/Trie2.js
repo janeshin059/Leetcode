@@ -76,14 +76,18 @@ const Trie = function() {
   
   // returns every word with given prefix
   this.find = function(prefix) {
+  
     let node = this.root;
     let output = [];
 
+    
     // for every character in the prefix
+    //(전체가 다 있냐는거)
     for(let i = 0; i < prefix.length; i++) {
       // make sure prefix actually has words
       if (node.children[prefix[i]]) {
         node = node.children[prefix[i]];
+        console.log(node);
       } else {
         // there's none. just return it.
         return output;
