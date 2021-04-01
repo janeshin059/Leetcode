@@ -54,7 +54,7 @@ const Trie = function() {
     }
   };
   
-  // check if it contains a whole word.
+  // check if it contains a WHOLE word.
   this.contains = function(word) {
     let node = this.root;
 
@@ -74,7 +74,7 @@ const Trie = function() {
     return node.end;
   };
   
-  // returns every word with given prefix
+  // returns every word with given PREFIX
   this.find = function(prefix) {
   
     let node = this.root;
@@ -86,7 +86,7 @@ const Trie = function() {
     for(let i = 0; i < prefix.length; i++) {
       // make sure prefix actually has words
       if (node.children[prefix[i]]) {
-        node = node.children[prefix[i]];
+        node = node.children[prefix[i]]; //proceed to the next depth of the trie
         console.log(node);
       } else {
         // there's none. just return it.
