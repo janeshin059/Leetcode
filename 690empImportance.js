@@ -13,4 +13,3 @@ var GetImportance = function(employees, id) {
   }
   return total;
 };
-
