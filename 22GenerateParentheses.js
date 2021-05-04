@@ -20,7 +20,7 @@
 //조건에 맞는 걸 '다' 탐색하고 다시 그 전 걸로 돌아옴
 
 
-var generateParenthesis = function(n) {
+var generateParenthesis2 = function(n) {
   let res = [];
   function generate(open, close, str){
       if(close>open){
