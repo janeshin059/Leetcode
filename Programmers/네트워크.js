@@ -1,7 +1,6 @@
 function solution(n, computers) {
   var answer = 0;
-  
-  //DFS로 푸는 문제
+  //DFS
  
   for (let i = 0; i < computers.length; i++) { //갯수만큼 loop
       if (computers[i][i] != -1) { //방문한 Node인지 체크
