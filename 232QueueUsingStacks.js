@@ -24,7 +24,7 @@ MyQueue.prototype.pop = function() {
       this.stack2.push(this.stack1.pop());
   }
   
-  let pop = this.stack2.pop();
+  let pop = this.stack2.pop(); //그냥 pop한거 return
   
    while(!this.stack2.length == 0){
       this.stack1.push(this.stack2.pop());
